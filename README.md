@@ -38,7 +38,7 @@ Build a **Task Tracker with AI Features** -- a full-stack application for managi
 
 ## What You Build
 
-### 1. Core API Endpoints (tested -- same as SE I)
+### 1. Core API Endpoints (tested)
 
 Implement the route handlers in `app/api/`:
 
@@ -100,13 +100,13 @@ Build a functional UI **using Next.js App Router patterns**:
 
 ### 4. Solution Design (written)
 
-Complete the questions in `SOLUTION_DESIGN.md`. The SE II questions focus on production AI architecture, security, and system design at scale.
+Complete the questions in `SOLUTION_DESIGN.md`. These focus on production AI architecture, security, and system design at scale.
 
 ## Getting Started
 
 ### Prerequisites
-- Docker and Docker Compose
-- Node.js 20+ and bun
+- [Bun](https://bun.sh/) (package manager and runtime)
+- [Docker](https://www.docker.com/) (for PostgreSQL and the mock LLM service)
 
 ### Setup
 
@@ -176,11 +176,11 @@ bun run db:generate
 
 ## Submission
 
-1. Ensure all 49 tests pass (`bun test`)
-2. Ensure `bun run lint` and `bun run typecheck` pass clean
-3. Complete `SOLUTION_DESIGN.md`
-4. Push to a **private** GitHub repo and share access, or send as a zip file
-5. Include any notes about your approach in the solution design doc
+1. Implement all API routes and the LLM client (replace the `TODO` stubs)
+2. Build the dashboard UI with AI features
+3. Answer the questions in `SOLUTION_DESIGN.md`
+4. Ensure all 49 tests pass, typecheck is clean, and lint passes
+5. Push your solution to a branch named `solution`
 
 ## What We Evaluate
 
