@@ -176,11 +176,13 @@ bun run db:generate
 
 ## Submission
 
-1. Implement all API routes and the LLM client (replace the `TODO` stubs)
-2. Build the dashboard UI with AI features
-3. Answer the questions in `SOLUTION_DESIGN.md`
-4. Ensure all 49 tests pass, typecheck is clean, and lint passes
-5. Push your solution to a branch named `solution`
+1. Click **"Use this template"** on GitHub to create a **private** copy of this repo
+2. Implement all API routes and the LLM client (replace the `TODO` stubs)
+3. Build the dashboard UI with AI features
+4. Answer the questions in `SOLUTION_DESIGN.md`
+5. Ensure all 49 tests pass, typecheck is clean, and lint passes
+6. Add your BLEN recruiting contact as a collaborator on your repo
+7. Share the repo link with your recruiting contact
 
 ## What We Evaluate
 
