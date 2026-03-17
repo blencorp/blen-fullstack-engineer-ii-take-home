@@ -15,6 +15,7 @@ Build a **Task Tracker with AI Features** -- a full-stack application for managi
 - **API route scaffolds** with detailed JSDoc describing expected behavior and Drizzle hints
 - **LLM client scaffold** (`lib/llm.ts`) -- implement the wrapper around the mock LLM
 - **TypeScript types** including valid status transitions
+- **Page scaffolds** for `app/page.tsx` (project list) and `app/projects/[id]/page.tsx` (project detail) with TODO comments
 - **Tailwind CSS + shadcn/ui** configured for styling
 
 ## Architecture
@@ -83,7 +84,15 @@ The mock LLM returns deterministic responses based on keywords in the system pro
 
 ### 3. Dashboard UI (manually reviewed)
 
-Build a functional UI that includes the AI features:
+Build a functional UI **using Next.js App Router patterns**:
+
+**App Router Requirements:**
+- **File-system routing:** Use `app/page.tsx` for the projects list and `app/projects/[id]/page.tsx` for project detail. Scaffolds for both pages are provided.
+- **Server Components:** The default -- use them for data fetching and layout. Only add `'use client'` to components that need interactivity (forms, dialogs, click handlers).
+- **`Link` navigation:** Use `next/link` for client-side navigation between pages (e.g., project cards link to `/projects/[id]`).
+- **Async params:** In Next.js 16, dynamic route params are async: `const { id } = await params`.
+
+**UI features to include:**
 - Everything from the core task tracker (projects, tasks, CRUD, filters)
 - A way to trigger AI categorization on tasks
 - Display AI-suggested priorities when creating tasks

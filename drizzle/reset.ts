@@ -10,9 +10,10 @@ const db = drizzle(client);
 async function main() {
   console.log("Resetting database...");
 
-  // Drop all tables
+  // Drop all tables and clear migration history
   await db.execute(sql`DROP SCHEMA public CASCADE`);
   await db.execute(sql`CREATE SCHEMA public`);
+  await db.execute(sql`DELETE FROM drizzle.__drizzle_migrations`);
 
   // Re-run migrations
   await migrate(db, { migrationsFolder: "./drizzle" });

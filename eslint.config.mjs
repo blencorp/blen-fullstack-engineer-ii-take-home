@@ -12,7 +12,18 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Infrastructure files
+    "mock-llm/**",
+    "drizzle/*.ts",
+    "drizzle.config.ts",
+    "jest.config.ts",
   ]),
+  {
+    files: ["__tests__/**/*.ts"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;
