@@ -4,7 +4,7 @@
 
 Build a **Task Tracker with AI Features** -- a full-stack application for managing projects and tasks, enhanced with LLM-powered capabilities. The data model, test suite, mock LLM service, and infrastructure are all provided. Your job is to implement the API endpoints, AI integration, business logic, and a functional UI.
 
-**Time expectation:** 1-2 days. Focus on clean, working code over polish.
+**Time expectation:** Please submit within 24 hours. Focus on clean, working code over polish.
 
 ## What's Provided
 
