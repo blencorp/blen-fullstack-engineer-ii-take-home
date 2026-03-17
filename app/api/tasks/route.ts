@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
 /**
  * GET /api/tasks
@@ -24,11 +24,11 @@ import { NextRequest, NextResponse } from "next/server";
  *   - Use separate queries for count and data (with limit/offset)
  */
 export async function GET(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "GET /api/tasks not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -57,9 +57,9 @@ export async function GET(request: NextRequest) {
  *   - Defaults: status="open", priority="medium"
  */
 export async function POST(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "POST /api/tasks not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

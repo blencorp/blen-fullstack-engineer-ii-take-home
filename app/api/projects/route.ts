@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
 /**
  * GET /api/projects
@@ -17,11 +17,11 @@ import { NextRequest, NextResponse } from "next/server";
  *   - Filter by status using Drizzle's `eq()` when the param is present
  */
 export async function GET(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "GET /api/projects not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -44,9 +44,9 @@ export async function GET(request: NextRequest) {
  *   - Trim the name before inserting
  */
 export async function POST(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "POST /api/projects not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

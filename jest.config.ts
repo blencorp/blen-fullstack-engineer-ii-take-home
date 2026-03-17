@@ -1,4 +1,4 @@
-import type { Config } from "jest";
+import type { Config } from "jest"
 
 const config: Config = {
   preset: "ts-jest",
@@ -10,6 +10,6 @@ const config: Config = {
   },
   setupFilesAfterEnv: ["<rootDir>/__tests__/setup.ts"],
   testTimeout: 15000,
-};
+}
 
-export default config;
+export default config

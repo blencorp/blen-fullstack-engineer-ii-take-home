@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
 /**
  * POST /api/ai/summarize
@@ -34,9 +34,9 @@ import { NextRequest, NextResponse } from "next/server";
  *   - The mock LLM returns { summary, taskCount, health } when triggered by "summarize"
  */
 export async function POST(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "POST /api/ai/summarize not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

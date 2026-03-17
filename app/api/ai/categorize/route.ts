@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
 /**
  * POST /api/ai/categorize
@@ -34,9 +34,9 @@ import { NextRequest, NextResponse } from "next/server";
  *   - Avoid duplicate labels: check if category is already in the array
  */
 export async function POST(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "POST /api/ai/categorize not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

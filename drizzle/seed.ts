@@ -1,17 +1,17 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
-import { projects, tasks } from "../lib/schema";
+import { drizzle } from "drizzle-orm/postgres-js"
+import postgres from "postgres"
+import { projects, tasks } from "../lib/schema"
 
-const connectionString = process.env.DATABASE_URL!;
-const client = postgres(connectionString, { max: 1 });
-const db = drizzle(client);
+const connectionString = process.env.DATABASE_URL!
+const client = postgres(connectionString, { max: 1 })
+const db = drizzle(client)
 
 async function main() {
-  console.log("Seeding database...");
+  console.log("Seeding database...")
 
   // Clean existing data
-  await db.delete(tasks);
-  await db.delete(projects);
+  await db.delete(tasks)
+  await db.delete(projects)
 
   // Seed projects
   const [projectAlpha] = await db
@@ -21,7 +21,7 @@ async function main() {
       description: "Main product development",
       status: "active",
     })
-    .returning();
+    .returning()
 
   const [projectBeta] = await db
     .insert(projects)
@@ -30,13 +30,13 @@ async function main() {
       description: "Internal tooling",
       status: "active",
     })
-    .returning();
+    .returning()
 
   await db.insert(projects).values({
     name: "Legacy Migration",
     description: "Migrate legacy services to new architecture",
     status: "archived",
-  });
+  })
 
   // Seed tasks for Project Alpha
   await db.insert(tasks).values([
@@ -78,7 +78,7 @@ async function main() {
       priority: "low",
       projectId: projectAlpha.id,
     },
-  ]);
+  ])
 
   // Seed tasks for Project Beta
   await db.insert(tasks).values([
@@ -97,13 +97,13 @@ async function main() {
       priority: "high",
       projectId: projectBeta.id,
     },
-  ]);
+  ])
 
-  console.log("Database seeded successfully.");
-  await client.end();
+  console.log("Database seeded successfully.")
+  await client.end()
 }
 
 main().catch((err) => {
-  console.error("Seed failed:", err);
-  process.exit(1);
-});
+  console.error("Seed failed:", err)
+  process.exit(1)
+})

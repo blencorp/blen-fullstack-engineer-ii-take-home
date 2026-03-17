@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
 /**
  * POST /api/ai/suggest-priority
@@ -32,9 +32,9 @@ import { NextRequest, NextResponse } from "next/server";
  *   - The mock LLM returns { priority, reasoning }
  */
 export async function POST(request: NextRequest) {
-  void request;
+  void request
   return NextResponse.json(
     { error: "POST /api/ai/suggest-priority not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

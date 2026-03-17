@@ -6,21 +6,21 @@
  * requests at the URL defined by the LLM_BASE_URL environment variable.
  */
 
-const LLM_BASE_URL = process.env.LLM_BASE_URL || "http://localhost:11434";
+const LLM_BASE_URL = process.env.LLM_BASE_URL || "http://localhost:11434"
 
 export interface ChatMessage {
-  role: "system" | "user" | "assistant";
-  content: string;
+  role: "system" | "user" | "assistant"
+  content: string
 }
 
 export interface LlmResponse {
-  content: string;
-  model: string;
+  content: string
+  model: string
   usage: {
-    prompt_tokens: number;
-    completion_tokens: number;
-    total_tokens: number;
-  };
+    prompt_tokens: number
+    completion_tokens: number
+    total_tokens: number
+  }
 }
 
 /**
@@ -39,11 +39,11 @@ export interface LlmResponse {
  */
 export async function chatCompletion(
   messages: ChatMessage[],
-  options?: { model?: string; temperature?: number },
+  options?: { model?: string; temperature?: number }
 ): Promise<LlmResponse> {
-  void messages;
-  void options;
-  void LLM_BASE_URL;
+  void messages
+  void options
+  void LLM_BASE_URL
   // TODO: Implement
-  throw new Error("chatCompletion not implemented");
+  throw new Error("chatCompletion not implemented")
 }

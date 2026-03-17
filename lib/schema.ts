@@ -1,11 +1,5 @@
-import {
-  pgTable,
-  pgEnum,
-  uuid,
-  text,
-  timestamp,
-} from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
+import { pgTable, pgEnum, uuid, text, timestamp } from "drizzle-orm/pg-core"
+import { relations } from "drizzle-orm"
 
 // ---------------------------------------------------------------------------
 // Enums
@@ -15,21 +9,21 @@ export const projectStatusEnum = pgEnum("project_status", [
   "active",
   "completed",
   "archived",
-]);
+])
 
 export const taskStatusEnum = pgEnum("task_status", [
   "open",
   "in_progress",
   "in_review",
   "completed",
-]);
+])
 
 export const taskPriorityEnum = pgEnum("task_priority", [
   "low",
   "medium",
   "high",
   "critical",
-]);
+])
 
 // ---------------------------------------------------------------------------
 // Tables
@@ -42,7 +36,7 @@ export const projects = pgTable("projects", {
   status: projectStatusEnum("status").default("active").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
-});
+})
 
 export const tasks = pgTable("tasks", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -58,7 +52,7 @@ export const tasks = pgTable("tasks", {
     .references(() => projects.id, { onDelete: "cascade" }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
-});
+})
 
 // ---------------------------------------------------------------------------
 // Relations
@@ -66,24 +60,24 @@ export const tasks = pgTable("tasks", {
 
 export const projectRelations = relations(projects, ({ many }) => ({
   tasks: many(tasks),
-}));
+}))
 
 export const taskRelations = relations(tasks, ({ one }) => ({
   project: one(projects, {
     fields: [tasks.projectId],
     references: [projects.id],
   }),
-}));
+}))
 
 // ---------------------------------------------------------------------------
 // Types (inferred from schema)
 // ---------------------------------------------------------------------------
 
-export type Project = typeof projects.$inferSelect;
-export type NewProject = typeof projects.$inferInsert;
-export type Task = typeof tasks.$inferSelect;
-export type NewTask = typeof tasks.$inferInsert;
+export type Project = typeof projects.$inferSelect
+export type NewProject = typeof projects.$inferInsert
+export type Task = typeof tasks.$inferSelect
+export type NewTask = typeof tasks.$inferInsert
 
-export type ProjectStatus = (typeof projectStatusEnum.enumValues)[number];
-export type TaskStatus = (typeof taskStatusEnum.enumValues)[number];
-export type TaskPriority = (typeof taskPriorityEnum.enumValues)[number];
+export type ProjectStatus = (typeof projectStatusEnum.enumValues)[number]
+export type TaskStatus = (typeof taskStatusEnum.enumValues)[number]
+export type TaskPriority = (typeof taskPriorityEnum.enumValues)[number]

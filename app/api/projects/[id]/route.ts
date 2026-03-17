@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
-type RouteContext = { params: Promise<{ id: string }> };
+type RouteContext = { params: Promise<{ id: string }> }
 
 /**
  * GET /api/projects/:id
@@ -22,12 +22,12 @@ type RouteContext = { params: Promise<{ id: string }> };
  *   - Compute taskCounts by filtering the tasks array in memory
  */
 export async function GET(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "GET /api/projects/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -49,12 +49,12 @@ export async function GET(request: NextRequest, context: RouteContext) {
  *   - Check for unique constraint violations on name
  */
 export async function PATCH(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "PATCH /api/projects/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -71,10 +71,10 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
  *   - Return 200 with success message on deletion
  */
 export async function DELETE(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "DELETE /api/projects/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }

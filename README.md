@@ -32,7 +32,7 @@ Build a **Task Tracker with AI Features** -- a full-stack application for managi
 +---------------+           +-------+-------+
 |  PostgreSQL   |<----------|   Next.js     |
 |  (Drizzle)    |           |   App         |
-|   :5432       |           |   :3002       |
+|   :5433       |           |   :3002       |
 +---------------+           +---------------+
 ```
 
@@ -151,7 +151,7 @@ curl -X POST http://localhost:11434/v1/chat/completions \
 
 ```bash
 # Run the full test suite (requires db + mock-llm running)
-bun test
+bun run test
 
 # Run linting and type checks
 bun run lint

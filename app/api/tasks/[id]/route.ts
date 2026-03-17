@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
 
-type RouteContext = { params: Promise<{ id: string }> };
+type RouteContext = { params: Promise<{ id: string }> }
 
 /**
  * GET /api/tasks/:id
@@ -18,12 +18,12 @@ type RouteContext = { params: Promise<{ id: string }> };
  *   - Return project as `{ id, name }` only (not the full project object)
  */
 export async function GET(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "GET /api/tasks/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -44,12 +44,12 @@ export async function GET(request: NextRequest, context: RouteContext) {
  *   - Always set updatedAt to new Date()
  */
 export async function PATCH(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "PATCH /api/tasks/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
 
 /**
@@ -65,10 +65,10 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
  *   - Return 200 with success message
  */
 export async function DELETE(request: NextRequest, context: RouteContext) {
-  void request;
-  void context;
+  void request
+  void context
   return NextResponse.json(
     { error: "DELETE /api/tasks/:id not implemented" },
-    { status: 501 },
-  );
+    { status: 501 }
+  )
 }
