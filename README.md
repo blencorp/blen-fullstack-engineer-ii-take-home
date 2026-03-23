@@ -1,19 +1,19 @@
-# BLEN -- Senior Software Developer II (Full Stack) Take-Home
+# BLEN — Senior Software Developer II (Full Stack) Take-Home
 
 ## Overview
 
-Build a **Task Tracker with AI Features** -- a full-stack application for managing projects and tasks, enhanced with LLM-powered capabilities. The data model, test suite, mock LLM service, and infrastructure are all provided. Your job is to implement the API endpoints, AI integration, business logic, and a functional UI.
+Build a **Task Tracker with AI Features** — a full-stack application for managing projects and tasks, enhanced with LLM-powered capabilities. The data model, test suite, mock LLM service, and infrastructure are all provided. Your job is to implement the API endpoints, AI integration, business logic, and a functional UI.
 
 **Time expectation:** Please submit within 24 hours. Focus on clean, working code over polish.
 
 ## What's Provided
 
 - **Database schema** (Drizzle ORM) with migrations and seed data
-- **Docker Compose** with PostgreSQL + a mock LLM service -- no external APIs or keys needed
-- **Mock LLM service** -- an OpenAI-compatible chat completions API that returns deterministic responses (see `mock-llm/server.ts` for behavior)
-- **Pre-written test suite** (49 tests) -- your implementation must pass all of them
+- **Docker Compose** with PostgreSQL + a mock LLM service — no external APIs or keys needed
+- **Mock LLM service** — an OpenAI-compatible chat completions API that returns deterministic responses (see `mock-llm/server.ts` for behavior)
+- **Pre-written test suite** (49 tests) — your implementation must pass all of them
 - **API route scaffolds** with detailed JSDoc describing expected behavior and Drizzle hints
-- **LLM client scaffold** (`lib/llm.ts`) -- implement the wrapper around the mock LLM
+- **LLM client scaffold** (`lib/llm.ts`) — implement the wrapper around the mock LLM
 - **TypeScript types** including valid status transitions
 - **Page scaffolds** for `app/page.tsx` (project list) and `app/projects/[id]/page.tsx` (project detail) with TODO comments
 - **Tailwind CSS + shadcn/ui** configured for styling
@@ -43,18 +43,18 @@ Build a **Task Tracker with AI Features** -- a full-stack application for managi
 Implement the route handlers in `app/api/`:
 
 **Projects**
-- `GET /api/projects` -- List projects with optional status filter, include task counts
-- `POST /api/projects` -- Create project (unique name required)
-- `GET /api/projects/:id` -- Get project with task counts by status
-- `PATCH /api/projects/:id` -- Update project fields
-- `DELETE /api/projects/:id` -- Delete project (blocked if tasks are in_progress or in_review)
+- `GET /api/projects` — List projects with optional status filter, include task counts
+- `POST /api/projects` — Create project (unique name required)
+- `GET /api/projects/:id` — Get project with task counts by status
+- `PATCH /api/projects/:id` — Update project fields
+- `DELETE /api/projects/:id` — Delete project (blocked if tasks are in_progress or in_review)
 
 **Tasks**
-- `GET /api/tasks` -- List tasks with filters (status, priority, assignee, projectId) and pagination
-- `POST /api/tasks` -- Create task (must reference valid project)
-- `GET /api/tasks/:id` -- Get task with parent project info
-- `PATCH /api/tasks/:id` -- Update task (status changes must follow valid transitions)
-- `DELETE /api/tasks/:id` -- Delete task
+- `GET /api/tasks` — List tasks with filters (status, priority, assignee, projectId) and pagination
+- `POST /api/tasks` — Create task (must reference valid project)
+- `GET /api/tasks/:id` — Get task with parent project info
+- `PATCH /api/tasks/:id` — Update task (status changes must follow valid transitions)
+- `DELETE /api/tasks/:id` — Delete task
 
 **Business Logic:**
 - Task status transitions are enforced. See `lib/types.ts` for the transition map.
@@ -62,9 +62,9 @@ Implement the route handlers in `app/api/`:
 - Project names must be unique
 
 **Key files:**
-- `lib/schema.ts` -- Drizzle schema (tables, enums, relations, inferred types)
-- `lib/db.ts` -- Database client (drizzle + postgres.js)
-- `lib/types.ts` -- Status transition map and API types
+- `lib/schema.ts` — Drizzle schema (tables, enums, relations, inferred types)
+- `lib/db.ts` — Database client (drizzle + postgres.js)
+- `lib/types.ts` — Status transition map and API types
 
 ### 2. AI Integration (tested)
 
@@ -76,11 +76,11 @@ Implement the LLM client and AI endpoints:
 - The mock LLM runs at `$LLM_BASE_URL/v1/chat/completions`
 
 **AI Endpoints**
-- `POST /api/ai/categorize` -- Auto-categorize a task (bug, feature, improvement, documentation) and update its labels
-- `POST /api/ai/summarize` -- Generate a project status summary from its tasks
-- `POST /api/ai/suggest-priority` -- Suggest priority level for a task description
+- `POST /api/ai/categorize` — Auto-categorize a task (bug, feature, improvement, documentation) and update its labels
+- `POST /api/ai/summarize` — Generate a project status summary from its tasks
+- `POST /api/ai/suggest-priority` — Suggest priority level for a task description
 
-The mock LLM returns deterministic responses based on keywords in the system prompt and user content. Read `mock-llm/server.ts` to understand the response patterns -- your system prompts must include specific keywords to trigger the correct response type.
+The mock LLM returns deterministic responses based on keywords in the system prompt and user content. Read `mock-llm/server.ts` to understand the response patterns — your system prompts must include specific keywords to trigger the correct response type.
 
 ### 3. Dashboard UI (manually reviewed)
 
@@ -88,7 +88,7 @@ Build a functional UI **using Next.js App Router patterns**:
 
 **App Router Requirements:**
 - **File-system routing:** Use `app/page.tsx` for the projects list and `app/projects/[id]/page.tsx` for project detail. Scaffolds for both pages are provided.
-- **Server Components:** The default -- use them for data fetching and layout. Only add `'use client'` to components that need interactivity (forms, dialogs, click handlers).
+- **Server Components:** The default — use them for data fetching and layout. Only add `'use client'` to components that need interactivity (forms, dialogs, click handlers).
 - **`Link` navigation:** Use `next/link` for client-side navigation between pages (e.g., project cards link to `/projects/[id]`).
 - **Async params:** In Next.js 16, dynamic route params are async: `const { id } = await params`.
 
@@ -183,7 +183,7 @@ bun run db:generate
 5. Ensure all 49 tests pass, typecheck is clean, and lint passes
 6. Add the following GitHub users as **collaborators** on your repo ([how to add collaborators](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository)):
    - `naodya` (Naod — Engineering)
-   - `juliosbelen` (Julius — Engineering)
+   - `juliusoh` (Julius — Engineering)
 7. Send the repo link to your BLEN recruiting contact
 
 ## What We Evaluate
@@ -199,3 +199,5 @@ bun run db:generate
 ## Questions?
 
 If anything is unclear, reach out. We'd rather you ask than guess.
+
+Good luck!
