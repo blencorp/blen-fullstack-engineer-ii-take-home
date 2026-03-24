@@ -1,5 +1,18 @@
 # BLEN — Senior Software Developer II (Full Stack) Take-Home
 
+## Candidate Info
+
+> **Please fill this in before submitting.** This helps our reviewers identify your submission.
+
+| Field | Your answer |
+|-------|-------------|
+| **Name** | <!-- Your full name --> |
+| **Email** | <!-- Your email address --> |
+| **GitHub** | <!-- Your GitHub username --> |
+| **Date submitted** | <!-- e.g. 2026-03-24 --> |
+
+---
+
 ## Overview
 
 Build a **Task Tracker with AI Features** — a full-stack application for managing projects and tasks, enhanced with LLM-powered capabilities. The data model, test suite, mock LLM service, and infrastructure are all provided. Your job is to implement the API endpoints, AI integration, business logic, and a functional UI.
@@ -177,7 +190,7 @@ bun run db:generate
 ## Submission
 
 1. Click **"Use this template"** on GitHub to create a **private** copy of this repo
-2. **Fill in the candidate info section below** (in your copy of this README)
+2. **Fill in the Candidate Info table at the top of this README**
 3. Implement all API routes and the LLM client (replace the `TODO` stubs)
 4. Build the dashboard UI with AI features
 5. Answer the questions in `SOLUTION_DESIGN.md`
@@ -186,15 +199,6 @@ bun run db:generate
    - `naodya` (Naod — Engineering)
    - `juliusoh` (Julius — Engineering)
 8. Send the repo link to your BLEN recruiting contact
-
-### Candidate Info
-
-> **Please fill this in before submitting.** This helps our reviewers identify your submission.
-
-- **Name:** <!-- Your full name -->
-- **Email:** <!-- Your email address -->
-- **GitHub:** <!-- Your GitHub username -->
-- **Date submitted:** <!-- e.g. 2026-03-24 -->
 
 ## What We Evaluate
 
